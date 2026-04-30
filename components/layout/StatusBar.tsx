@@ -7,7 +7,7 @@ export default function StatusBar() {
   const { openDino } = useVSCode();
 
   return (
-    <div className="flex items-center justify-between h-[22px] bg-vscode-statusbar text-white text-xs px-2 flex-shrink-0 select-none">
+    <div className="hidden md:flex items-center justify-between h-[22px] bg-vscode-statusbar text-white text-xs px-2 flex-shrink-0 select-none">
       <div className="flex items-center gap-3">
         <button className="flex items-center gap-1 hover:bg-white/10 px-1 h-full transition-colors">
           <GitBranch size={12} />

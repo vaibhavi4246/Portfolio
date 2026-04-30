@@ -53,7 +53,7 @@ export default function Projects() {
 
   return (
     <div className="h-full overflow-auto select-text">
-      <motion.div variants={container} initial="hidden" animate="show" className="px-10 py-10">
+      <motion.div variants={container} initial="hidden" animate="show" className="px-4 sm:px-6 md:px-10 py-6 sm:py-8 md:py-10">
 
         <motion.p variants={item} className="font-mono text-vscode-comment text-sm mb-6">
           {"// projects/index.ts — things I've built"}
@@ -85,21 +85,21 @@ export default function Projects() {
               <motion.div
                 key={p.id}
                 variants={item}
-                className="border border-vscode-border bg-vscode-sidebar rounded-sm p-6 flex flex-col hover:border-vscode-accent/50 transition-colors duration-200"
+                className="border border-vscode-border bg-vscode-sidebar rounded-sm p-4 sm:p-6 flex flex-col hover:border-vscode-accent/50 transition-colors duration-200"
                 style={{ borderTopWidth: "2px", borderTopColor: meta.borderColor }}
               >
                 {/* Card header: emoji + tags + link */}
-                <div className="flex items-start justify-between mb-3">
+                <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 mb-3">
                   <div>
                     <span className="text-2xl mb-2 block">{meta.emoji}</span>
                     <p
-                      className="font-mono text-[11px] uppercase tracking-widest font-semibold"
+                      className="font-mono text-[10px] sm:text-[11px] uppercase tracking-widest font-semibold"
                       style={{ color: meta.tagColor }}
                     >
                       {meta.tags.join(" · ")}
                     </p>
                   </div>
-                  <div className="flex gap-2 flex-shrink-0 mt-1">
+                  <div className="flex flex-wrap gap-2 flex-shrink-0 mt-1">
                     {p.live && (
                       <a
                         href={p.live}

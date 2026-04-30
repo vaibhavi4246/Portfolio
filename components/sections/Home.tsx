@@ -50,7 +50,7 @@ export default function Home() {
         variants={container}
         initial="hidden"
         animate="show"
-        className="px-10 py-10"
+        className="px-4 sm:px-6 md:px-10 py-6 sm:py-8 md:py-10"
       >
         {/* Comment header */}
         <motion.p variants={item} className="font-mono text-vscode-comment text-sm mb-6">
@@ -109,7 +109,7 @@ export default function Home() {
             <button
               key={tab.id}
               onClick={() => openTab(tab)}
-              className={`px-6 py-2.5 text-sm font-mono rounded-sm transition-colors ${
+              className={`w-full sm:w-auto px-6 py-2.5 text-sm font-mono rounded-sm transition-colors ${
                 tab.id === "projects"
                   ? "text-white"
                   : "border border-vscode-border text-vscode-text hover:border-vscode-accent hover:text-vscode-accent"
@@ -125,7 +125,7 @@ export default function Home() {
           <a
             href="/resume.pdf"
             download="Vaibhavi_Jain_Resume.pdf"
-            className="flex items-center gap-2 px-6 py-2.5 border border-vscode-border text-vscode-muted hover:border-vscode-accent hover:text-vscode-accent text-sm font-mono rounded-sm transition-colors"
+            className="w-full sm:w-auto flex items-center gap-2 px-6 py-2.5 border border-vscode-border text-vscode-muted hover:border-vscode-accent hover:text-vscode-accent text-sm font-mono rounded-sm transition-colors"
           >
             <Download size={13} /> Resume
           </a>
@@ -137,9 +137,9 @@ export default function Home() {
           className="border border-vscode-border rounded-sm mb-8"
           style={{ backgroundColor: "var(--color-vscode-sidebar)" }}
         >
-          <div className="grid grid-cols-4 divide-x divide-vscode-border">
+          <div className="grid grid-cols-2 sm:grid-cols-4 divide-y divide-vscode-border sm:divide-y-0 sm:divide-x">
             {STATS.map(({ value, label }) => (
-              <div key={label} className="flex flex-col items-center justify-center py-6 px-4">
+              <div key={label} className="flex flex-col items-center justify-center py-5 sm:py-6 px-4">
                 <span
                   className="font-display leading-none mb-1 text-vscode-text"
                   style={{ fontSize: "clamp(2rem, 4vw, 3rem)" }}

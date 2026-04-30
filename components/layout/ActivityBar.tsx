@@ -99,7 +99,7 @@ export default function ActivityBar() {
   );
 
   return (
-    <div className="flex flex-col items-center w-12 bg-vscode-activitybar flex-shrink-0 border-r border-vscode-border">
+    <div className="hidden md:flex flex-col items-center w-12 bg-vscode-activitybar flex-shrink-0 border-r border-vscode-border">
       {/* Top group */}
       {btn("Explorer (Ctrl+B)", <IconExplorer active={activePanel === "explorer"} />, () => setActivePanel("explorer"), activePanel === "explorer")}
       {btn("Search", <IconSearch />, openPalette)}

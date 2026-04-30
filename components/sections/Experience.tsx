@@ -9,7 +9,7 @@ const container = { hidden: {}, show: { transition: { staggerChildren: 0.1 } } }
 export default function Experience() {
   return (
     <div className="h-full overflow-auto select-text">
-      <motion.div variants={container} initial="hidden" animate="show" className="px-10 py-10">
+      <motion.div variants={container} initial="hidden" animate="show" className="px-4 sm:px-6 md:px-10 py-6 sm:py-8 md:py-10">
 
         <motion.p variants={item} className="font-mono text-vscode-comment text-sm mb-6">
           {"// experience.ts — professional journey"}
@@ -32,7 +32,7 @@ export default function Experience() {
         </motion.p>
 
         {/* Timeline */}
-        <div className="relative max-w-3xl">
+        <div className="relative md:max-w-3xl">
           {/* Vertical line */}
           <div className="absolute left-2 top-0 bottom-0 w-px bg-vscode-border" />
 

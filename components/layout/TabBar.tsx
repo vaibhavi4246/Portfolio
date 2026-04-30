@@ -77,7 +77,7 @@ export default function TabBar() {
   const { openTabs, activeSection, openTab, closeTab } = useVSCode();
 
   return (
-    <div className="flex items-end h-9 bg-vscode-sidebar overflow-x-auto flex-shrink-0 border-b border-vscode-border">
+    <div className="hidden md:flex items-end h-9 bg-vscode-sidebar overflow-x-auto flex-shrink-0 border-b border-vscode-border">
       {openTabs.map((tab: Tab) => {
         const isActive = activeSection === tab.section;
         return (

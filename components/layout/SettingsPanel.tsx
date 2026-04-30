@@ -30,7 +30,7 @@ export default function SettingsPanel() {
       animate={{ opacity: 1, x: 0 }}
       exit={{ opacity: 0, x: -8 }}
       transition={{ duration: 0.15 }}
-      className="absolute left-12 top-0 bottom-0 w-72 bg-vscode-sidebar border-r border-vscode-border z-40 flex flex-col overflow-y-auto shadow-2xl"
+      className="fixed inset-0 md:absolute md:left-12 md:top-0 md:bottom-0 md:w-72 bg-vscode-sidebar md:border-r border-vscode-border z-50 flex flex-col overflow-y-auto shadow-2xl"
     >
       {/* Header */}
       <div className="flex items-center justify-between px-4 py-3 border-b border-vscode-border flex-shrink-0">

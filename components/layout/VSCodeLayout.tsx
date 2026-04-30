@@ -14,6 +14,7 @@ import SourceControlPopover from "./SourceControlPopover";
 import CopilotPanel from "./CopilotPanel";
 import SettingsPanel from "./SettingsPanel";
 import Terminal from "./Terminal";
+import MobileNav from "./MobileNav";
 import { VSCodeContext, useVSCodeState, useVSCode } from "@/hooks/useVSCode";
 import { THEMES, themeToVars } from "@/data/themes";
 import CustomCursor from "@/components/ui/CustomCursor";
@@ -80,13 +81,13 @@ function VSCodeContent() {
 
   return (
     <div
-      className="flex flex-col h-screen overflow-hidden"
+      className="flex flex-col min-h-screen md:h-screen md:overflow-hidden overflow-auto"
       style={themeToVars(theme.palette)}
     >
       <CustomCursor />
       <TitleBar />
 
-      <div className="flex flex-1 overflow-hidden relative">
+      <div className="flex flex-1 md:overflow-hidden overflow-auto relative">
         <ActivityBar />
 
         {/* Settings panel overlay */}
@@ -103,18 +104,21 @@ function VSCodeContent() {
 
         {/* Sidebar */}
         {isSidebarOpen && activePanel && (
-          <div className="w-60 flex-shrink-0 border-r border-vscode-border overflow-hidden">
+          <div className="hidden md:block w-60 flex-shrink-0 border-r border-vscode-border overflow-hidden bg-vscode-sidebar">
             <Sidebar />
           </div>
         )}
 
         {/* Editor + Copilot */}
-        <div className="flex flex-1 overflow-hidden">
+        <div className="flex flex-1 md:overflow-hidden overflow-auto">
           {/* Editor area */}
-          <div className="flex flex-col flex-1 overflow-hidden">
+          <div className="flex flex-col flex-1 md:overflow-hidden overflow-auto">
             <TabBar />
             <BreadcrumbBar />
-            <div className="flex-1 overflow-auto" style={{ backgroundColor: "var(--color-vscode-bg)" }}>
+            <div
+              className="flex-1 overflow-auto pb-14 md:pb-0"
+              style={{ backgroundColor: "var(--color-vscode-bg)" }}
+            >
               <AnimatePresence mode="wait">
                 <motion.div
                   key={activeSection}
@@ -139,6 +143,7 @@ function VSCodeContent() {
       </div>
 
       <StatusBar />
+      <MobileNav />
 
       {/* Dino game modal */}
       <AnimatePresence>

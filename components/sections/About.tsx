@@ -9,7 +9,7 @@ const container = { hidden: {}, show: { transition: { staggerChildren: 0.08 } } 
 export default function About() {
   return (
     <div className="h-full overflow-auto select-text">
-      <motion.div variants={container} initial="hidden" animate="show" className="px-10 py-10">
+      <motion.div variants={container} initial="hidden" animate="show" className="px-4 sm:px-6 md:px-10 py-6 sm:py-8 md:py-10">
 
         {/* Comment header */}
         <motion.p variants={item} className="font-mono text-vscode-comment text-sm mb-6">
@@ -101,7 +101,7 @@ export default function About() {
                 key={edu.institution}
                 className="border border-vscode-border bg-vscode-sidebar rounded-sm p-5 hover:border-vscode-accent/40 transition-colors"
               >
-                <div className="flex items-start justify-between gap-4">
+                <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4">
                   <div className="flex-1">
                     <p className="font-heading font-bold text-vscode-text text-base leading-tight mb-1">
                       {edu.institution}
@@ -109,7 +109,7 @@ export default function About() {
                     <p className="font-mono text-vscode-type text-sm">{edu.degree}</p>
                     <p className="font-mono text-vscode-muted text-xs mt-0.5">{edu.location}</p>
                   </div>
-                  <div className="text-right flex-shrink-0">
+                  <div className="text-left sm:text-right flex-shrink-0">
                     <p className="font-mono text-vscode-accent text-base font-bold">{edu.score}</p>
                     <p className="font-mono text-vscode-muted text-[10px]">{edu.scoreLabel}</p>
                     <p className="font-mono text-vscode-muted text-[10px] mt-1">{edu.period}</p>

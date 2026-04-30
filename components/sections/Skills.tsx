@@ -72,7 +72,7 @@ export default function Skills() {
 
   return (
     <div className="h-full overflow-auto select-text">
-      <motion.div variants={container} initial="hidden" animate="show" className="px-10 py-10">
+      <motion.div variants={container} initial="hidden" animate="show" className="px-4 sm:px-6 md:px-10 py-6 sm:py-8 md:py-10">
 
         <motion.p variants={item} className="font-mono text-vscode-comment text-sm mb-6">
           {"// skills.ts — tech stack & proficiency"}
@@ -98,7 +98,7 @@ export default function Skills() {
           <span className="text-vscode-text">{" }"}</span>
         </motion.p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 md:gap-x-16 gap-y-8 md:gap-y-10">
           {categories.map(([category, skills]) => {
             const labelColor = CATEGORY_LABEL_COLORS[category] ?? "#4ec9b0";
             return (

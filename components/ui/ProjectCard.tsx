@@ -11,7 +11,7 @@ export default function ProjectCard({ project }: Props) {
   return (
     <div className="border border-vscode-border bg-vscode-sidebar rounded-sm p-4 hover:border-vscode-accent/50 transition-colors group">
       <div className="flex items-start justify-between gap-2 mb-2">
-        <h3 className="text-vscode-function font-mono font-semibold text-sm">
+        <h3 className="text-vscode-function font-mono font-semibold text-sm min-w-0">
           {project.name}
         </h3>
         <span className="text-vscode-muted font-mono text-xs flex-shrink-0">{project.date}</span>
