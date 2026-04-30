@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import { motion } from "framer-motion";
 import { GitFork, Link, Mail, Code2, AtSign, Download, ExternalLink } from "lucide-react";
 import { personalInfo } from "@/data/portfolio";
@@ -47,15 +46,6 @@ const SOCIALS = [
 ];
 
 export default function Contact() {
-  const [status, setStatus] = useState<"idle" | "sending" | "sent">("idle");
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setStatus("sending");
-    await new Promise((r) => setTimeout(r, 1200));
-    setStatus("sent");
-  };
-
   return (
     <div className="h-full overflow-auto select-text">
       <motion.div variants={container} initial="hidden" animate="show" className="px-4 sm:px-6 md:px-10 py-6 sm:py-8 md:py-10">
@@ -143,81 +133,79 @@ export default function Contact() {
             <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-vscode-type mb-5">
               Send a Message
             </p>
+            <form
+              action="https://formsubmit.co/vaibhavijain1234@gmail.com"
+              method="POST"
+              className="space-y-5"
+            >
+              <input type="text" name="_honey" className="hidden" />
+              <input type="hidden" name="_subject" value="New message from portfolio" />
+              <input type="hidden" name="_captcha" value="false" />
 
-            {status === "sent" ? (
-              <div className="border border-vscode-border bg-vscode-sidebar rounded-sm p-8 text-center">
-                <p className="font-mono text-vscode-comment text-sm">
-                  ✓ Message received! I&apos;ll get back to you soon.
-                </p>
+              <div>
+                <label className="block font-mono text-vscode-muted text-xs mb-1.5">
+                  <span className="text-vscode-comment">{"// "}</span>
+                  YOUR_NAME{" "}
+                  <span className="text-vscode-error">*</span>
+                </label>
+                <input
+                  required
+                  name="name"
+                  placeholder="string"
+                  className="w-full bg-vscode-input border border-vscode-border rounded-sm px-4 py-2.5 text-sm font-mono text-vscode-text placeholder:text-vscode-muted/40 focus:outline-none focus:border-vscode-accent transition-colors"
+                />
               </div>
-            ) : (
-              <form onSubmit={handleSubmit} className="space-y-5">
-                <div>
-                  <label className="block font-mono text-vscode-muted text-xs mb-1.5">
-                    <span className="text-vscode-comment">{"// "}</span>
-                    YOUR_NAME{" "}
-                    <span className="text-vscode-error">*</span>
-                  </label>
-                  <input
-                    required
-                    name="name"
-                    placeholder="string"
-                    className="w-full bg-vscode-input border border-vscode-border rounded-sm px-4 py-2.5 text-sm font-mono text-vscode-text placeholder:text-vscode-muted/40 focus:outline-none focus:border-vscode-accent transition-colors"
-                  />
-                </div>
 
-                <div>
-                  <label className="block font-mono text-vscode-muted text-xs mb-1.5">
-                    <span className="text-vscode-comment">{"// "}</span>
-                    YOUR_EMAIL{" "}
-                    <span className="text-vscode-error">*</span>
-                  </label>
-                  <input
-                    required
-                    type="email"
-                    name="email"
-                    placeholder="string"
-                    className="w-full bg-vscode-input border border-vscode-border rounded-sm px-4 py-2.5 text-sm font-mono text-vscode-text placeholder:text-vscode-muted/40 focus:outline-none focus:border-vscode-accent transition-colors"
-                  />
-                </div>
+              <div>
+                <label className="block font-mono text-vscode-muted text-xs mb-1.5">
+                  <span className="text-vscode-comment">{"// "}</span>
+                  YOUR_EMAIL{" "}
+                  <span className="text-vscode-error">*</span>
+                </label>
+                <input
+                  required
+                  type="email"
+                  name="email"
+                  placeholder="string"
+                  className="w-full bg-vscode-input border border-vscode-border rounded-sm px-4 py-2.5 text-sm font-mono text-vscode-text placeholder:text-vscode-muted/40 focus:outline-none focus:border-vscode-accent transition-colors"
+                />
+              </div>
 
-                <div>
-                  <label className="block font-mono text-vscode-muted text-xs mb-1.5">
-                    <span className="text-vscode-comment">{"// "}</span>
-                    SUBJECT
-                  </label>
-                  <input
-                    name="subject"
-                    placeholder="string"
-                    className="w-full bg-vscode-input border border-vscode-border rounded-sm px-4 py-2.5 text-sm font-mono text-vscode-text placeholder:text-vscode-muted/40 focus:outline-none focus:border-vscode-accent transition-colors"
-                  />
-                </div>
+              <div>
+                <label className="block font-mono text-vscode-muted text-xs mb-1.5">
+                  <span className="text-vscode-comment">{"// "}</span>
+                  SUBJECT
+                </label>
+                <input
+                  name="subject"
+                  placeholder="string"
+                  className="w-full bg-vscode-input border border-vscode-border rounded-sm px-4 py-2.5 text-sm font-mono text-vscode-text placeholder:text-vscode-muted/40 focus:outline-none focus:border-vscode-accent transition-colors"
+                />
+              </div>
 
-                <div>
-                  <label className="block font-mono text-vscode-muted text-xs mb-1.5">
-                    <span className="text-vscode-comment">{"// "}</span>
-                    MESSAGE{" "}
-                    <span className="text-vscode-error">*</span>
-                  </label>
-                  <textarea
-                    required
-                    name="message"
-                    rows={5}
-                    placeholder="string"
-                    className="w-full bg-vscode-input border border-vscode-border rounded-sm px-4 py-2.5 text-sm font-mono text-vscode-text placeholder:text-vscode-muted/40 focus:outline-none focus:border-vscode-accent transition-colors resize-none"
-                  />
-                </div>
+              <div>
+                <label className="block font-mono text-vscode-muted text-xs mb-1.5">
+                  <span className="text-vscode-comment">{"// "}</span>
+                  MESSAGE{" "}
+                  <span className="text-vscode-error">*</span>
+                </label>
+                <textarea
+                  required
+                  name="message"
+                  rows={5}
+                  placeholder="string"
+                  className="w-full bg-vscode-input border border-vscode-border rounded-sm px-4 py-2.5 text-sm font-mono text-vscode-text placeholder:text-vscode-muted/40 focus:outline-none focus:border-vscode-accent transition-colors resize-none"
+                />
+              </div>
 
-                <button
-                  type="submit"
-                  disabled={status === "sending"}
-                  className="flex items-center gap-2 px-6 py-2.5 text-white text-sm font-mono rounded-sm transition-colors disabled:opacity-60"
-                  style={{ backgroundColor: "#0e639c" }}
-                >
-                  {status === "sending" ? "Sending..." : "send()"}
-                </button>
-              </form>
-            )}
+              <button
+                type="submit"
+                className="flex items-center gap-2 px-6 py-2.5 text-white text-sm font-mono rounded-sm transition-colors"
+                style={{ backgroundColor: "#0e639c" }}
+              >
+                send()
+              </button>
+            </form>
           </motion.div>
         </div>
       </motion.div>
