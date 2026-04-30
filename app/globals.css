@@ -1,26 +1,195 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-vscode-bg: #1e1e1e;
+  --color-vscode-sidebar: #252526;
+  --color-vscode-activitybar: #333333;
+  --color-vscode-tab-active: #1e1e1e;
+  --color-vscode-tab-inactive: #2d2d2d;
+  --color-vscode-border: #3e3e42;
+  --color-vscode-hover: #2a2d2e;
+  --color-vscode-list-active: #094771;
+  --color-vscode-accent: #007acc;
+  --color-vscode-statusbar: #007acc;
+  --color-vscode-text: #d4d4d4;
+  --color-vscode-muted: #858585;
+  --color-vscode-comment: #6a9955;
+  --color-vscode-keyword: #569cd6;
+  --color-vscode-string: #ce9178;
+  --color-vscode-function: #dcdcaa;
+  --color-vscode-type: #4ec9b0;
+  --color-vscode-number: #b5cea8;
+  --color-vscode-variable: #9cdcfe;
+  --color-vscode-input: #3c3c3c;
+  --color-vscode-button: #0e639c;
+  --color-vscode-button-hover: #1177bb;
+  --color-vscode-error: #f44747;
+  --color-vscode-success: #89d185;
+
+  --font-mono: var(--font-geist-mono), "Consolas", "Courier New", monospace;
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-bebas-neue), "Impact", "Arial Black", sans-serif;
+  --font-heading: var(--font-syne), "Helvetica Neue", ui-sans-serif, sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+* {
+  box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* Hide native cursor on non-touch devices */
+@media (pointer: fine) {
+  *, *::before, *::after {
+    cursor: none !important;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+html, body {
+  height: 100%;
+  overflow: hidden;
+  background: #1e1e1e;
+  color: #d4d4d4;
+}
+
+#__next, main {
+  height: 100%;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: #424242;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover { background: #555; }
+
+/* ── Typography utilities ─────────────────────── */
+
+.line-number {
+  user-select: none;
+  min-width: 3rem;
+  text-align: right;
+  padding-right: 1rem;
+  color: #858585;
+  font-family: var(--font-mono);
+  font-size: 14px;
+  line-height: 1.6;
+  flex-shrink: 0;
+}
+
+.code-line {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* Theme-adaptive gradient (for section headings) */
+.gradient-text {
+  background: linear-gradient(135deg, var(--color-vscode-accent), var(--color-vscode-keyword), var(--color-vscode-type));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Bold hero gradient — always vibrant regardless of theme */
+.gradient-hero {
+  background: linear-gradient(135deg, #60a5fa 0%, #a855f7 45%, #ec4899 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Animations ───────────────────────────────── */
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+.cursor-blink { animation: blink 1s step-end infinite; }
+
+@keyframes fadeSlideIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.fade-in { animation: fadeSlideIn 0.2s ease-out; }
+
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+.skill-bar-fill {
+  background-size: 200% auto;
+  animation: shimmer 3s linear infinite;
+}
+
+@keyframes glow-pulse {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+}
+.float-anim { animation: float 4s ease-in-out infinite; }
+
+@keyframes scan {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100vh); }
+}
+
+/* ── Scanline overlay ─────────────────────────── */
+.scanlines {
+  position: relative;
+}
+.scanlines::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0px,
+    transparent 3px,
+    rgba(0, 0, 0, 0.025) 3px,
+    rgba(0, 0, 0, 0.025) 4px
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ── Dot grid background ──────────────────────── */
+.dot-grid {
+  background-image: radial-gradient(circle, rgba(255,255,255,0.04) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+/* ── Glow card hover ──────────────────────────── */
+.glow-card {
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+.glow-card:hover {
+  box-shadow: 0 0 0 1px var(--color-vscode-accent), 0 4px 24px rgba(0, 122, 204, 0.15);
+}
+
+/* ── Neon text glow ───────────────────────────── */
+.neon-glow {
+  text-shadow: 0 0 20px rgba(96, 165, 250, 0.4), 0 0 40px rgba(168, 85, 247, 0.2);
+}
+
+/* ── Loader progress ──────────────────────────── */
+@keyframes progress-shine {
+  from { background-position: 200% center; }
+  to { background-position: -200% center; }
+}
+.progress-bar-shine {
+  background: linear-gradient(90deg, #007acc 0%, #4ec9b0 40%, #a855f7 70%, #007acc 100%);
+  background-size: 200% auto;
+  animation: progress-shine 2s linear infinite;
+}
+
+/* ── Responsive helpers ───────────────────────── */
+@media (max-width: 640px) {
+  .hide-mobile { display: none !important; }
 }
