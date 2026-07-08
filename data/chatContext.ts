@@ -17,17 +17,23 @@ EXPERIENCE:
   * Applied MVVM architecture with custom API workflows
 
 PROJECTS:
-1. AI MCP Travel Planner (Feb 2026) — Python, Streamlit, Groq API, SQLite, Plotly
+1. FixMyCity (Jun 2026) — React 19, TypeScript, Firebase, Express.js, Gemini AI
+   * AI-powered civic issue reporting app bridging citizens and city administration
+   * Leverages Google Gemini Vision + Embedding models to analyze and categorize issues
+   * Live at: fixmycity-101964605269.us-west1.run.app
+
+2. AI MCP Travel Planner (Feb 2026) — Python, Streamlit, Groq API, SQLite, Plotly
    * AI-powered travel planning platform with personalized multi-day itineraries
    * Real-time accommodation, weather, and location data integration
    * Interactive budget visualizations, live maps, PDF/calendar exports
 
-2. ScholarFlow (Oct 2025) — Flask, React, LED Transformers, Supabase, SciBERT
+3. ScholarFlow (Oct 2025) — Flask, React, LED Transformers, Supabase, SciBERT
    * Agentic research summarization platform using multi-agent NLP pipelines
    * Processes research papers in 10–30 seconds
    * Scalable Flask + Supabase backend with responsive React frontend
 
 ACHIEVEMENTS:
+- First Position — Clinical/Engineering Oral & Poster Presentation at Pediatric Epilepsy Research Symposium (PGIMER Chandigarh, April 2026)
 - Winner of Agentic AI Hackathon (April 2026) for building an AI-agent using n8n
 - Solved 200+ DSA problems on LeetCode (dynamic programming, graphs, greedy)
 

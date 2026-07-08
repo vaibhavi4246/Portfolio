@@ -18,7 +18,7 @@ export const personalInfo = {
   socials: {
     linkedin: "https://www.linkedin.com/in/vaibhavi-jain-8a674429b/",
     github: "https://github.com/vaibhavi4246",
-    leetcode: "https://leetcode.com/vaibhavijain",
+    leetcode: "https://leetcode.com/u/vaibhavi_jain/",
     instagram: "https://instagram.com/vaibhavi4246",
   },
 };
@@ -60,6 +60,17 @@ export const experience: ExperienceEntry[] = [
 ];
 
 export const projects: Project[] = [
+  {
+    id: "fixmycity",
+    name: "FixMyCity",
+    date: "Jun 2026",
+    description:
+      "AI-powered civic issue reporting app bridging citizens and city administration. Leverages Google Gemini AI (Vision + Embedding models) to intelligently analyze, categorize, and streamline reporting and resolution of local civic issues with real-time tracking.",
+    tech: ["React 19", "TypeScript", "Firebase", "Express.js", "Gemini AI", "Framer Motion", "Recharts"],
+    github: "https://github.com/vaibhavi4246/FixMyCity",
+    live: "https://fixmycity-101964605269.us-west1.run.app/",
+    featured: true,
+  },
   {
     id: "scholarflow",
     name: "ScholarFlow",
@@ -118,6 +129,12 @@ export const projects: Project[] = [
 ];
 
 export const achievements: Achievement[] = [
+  {
+    title: "🏆 First Position — Clinical/Engineering Oral & Poster Presentation",
+    date: "Apr 2026",
+    description:
+      "Secured First Position in the Clinical/Engineering Oral & Poster Presentation category at the Pediatric Epilepsy Research Symposium (PGIMER Chandigarh & Academy of Pediatric Neurology, April 2026).",
+  },
   {
     title: "Winner — Agentic AI Hackathon",
     date: "Apr 2026",

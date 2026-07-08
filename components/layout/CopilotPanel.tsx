@@ -35,12 +35,12 @@ const QA: { keywords: string[]; answer: string }[] = [
   {
     keywords: ["contact", "reach", "email", "linkedin", "hire", "collaborate", "connect"],
     answer:
-      "You can reach Vaibhavi through:\n\n📧 Email: vjain_be23@thapar.edu\n🔗 LinkedIn: linkedin.com/in/vaibhavi-jain-8a674429b\n💻 GitHub: github.com/vaibhavi4246\n⚡ LeetCode: leetcode.com/vaibhavijain\n📸 Instagram: @vaibhavi4246\n\nShe's open to internships, collaborations, and good conversations!",
+      "You can reach Vaibhavi through:\n\n📧 Email: vjain_be23@thapar.edu\n🔗 LinkedIn: linkedin.com/in/vaibhavi-jain-8a674429b\n💻 GitHub: github.com/vaibhavi4246\n⚡ LeetCode: leetcode.com/u/vaibhavi_jain\n📸 Instagram: @vaibhavi4246\n\nShe's open to internships, collaborations, and good conversations!",
   },
   {
     keywords: ["achievement", "award", "hackathon", "leetcode", "badge", "win"],
     answer:
-      "Vaibhavi's achievements include:\n\n🏆 Winner — Agentic AI Hackathon (Apr 2026): Built an innovative AI-agent using n8n automations.\n\n💡 200+ LeetCode Problems: Covering dynamic programming, graphs, and greedy algorithms.\n\n⭐ Pull Shark & Quickdraw GitHub Badges: Earned for consistent open-source contributions and fast PR merges.",
+      "Vaibhavi's achievements include:\n\n🏆 First Position — Clinical/Engineering Oral & Poster Presentation (Apr 2026): Secured first place at the Pediatric Epilepsy Research Symposium (PGIMER Chandigarh).\n\n🏆 Winner — Agentic AI Hackathon (Apr 2026): Built an innovative AI-agent using n8n automations.\n\n💡 200+ LeetCode Problems: Covering dynamic programming, graphs, and greedy algorithms.\n\n⭐ Pull Shark & Quickdraw GitHub Badges: Earned for consistent open-source contributions and fast PR merges.",
   },
   {
     keywords: ["education", "college", "thapar", "school", "cgpa", "grade", "study"],

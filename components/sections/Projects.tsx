@@ -15,6 +15,12 @@ interface ProjectMeta {
 }
 
 const PROJECT_META: Record<string, ProjectMeta> = {
+  fixmycity: {
+    emoji: "🏙️",
+    tags: ["AI", "CIVIC TECH", "GEMINI"],
+    borderColor: "#3b82f6",
+    tagColor: "#3b82f6",
+  },
   scholarflow: {
     emoji: "🎓",
     tags: ["AI", "MULTI-AGENT", "NLP"],
